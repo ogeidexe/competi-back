@@ -18,6 +18,7 @@ class CriarTabelaEmpresa extends Migration
             $table->string('cnpj');
             $table->string('nome');
             $table->string('fantasia');
+            $table->string('cnae');
             $table->string('telefone');
             $table->string('logradouro');
             $table->string('numero');

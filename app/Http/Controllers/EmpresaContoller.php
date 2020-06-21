@@ -16,7 +16,10 @@ class EmpresaContoller extends Controller
 
     public function listaEmpresas(){
         $empresas = Empresa::all();
-        return response()->json($empresas , 500);
+        if(empty($empresas)){
+            return response()->json($empresas , 500);
+        }
+        return response()->json($empresas , 200);
 
     }
   
@@ -29,12 +32,12 @@ class EmpresaContoller extends Controller
         return response()->json($empresa,201);
     }
   
-    public function deletaEmpresa(){
+    public function deletaEmpresa($id){
         Empresa::findOrFail($id)->delete();
         return response('Empresa removida com sucesso', 200);
     }
   
-    public function atualisaEmpresa($id, Request $resquest){
+    public function atualisaEmpresa(Request $request, $id){
         $empresa = Empresa::findOrFail($id);
         $empresa->update($request->all());
         return response()->json($empresa, 200);

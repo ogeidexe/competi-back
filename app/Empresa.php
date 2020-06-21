@@ -17,7 +17,7 @@ class Empresa extends Model
      * @var array
      */
     protected $fillable = [
-        'cnpj','nome','fantasia','telefone','logradouro','numero','bairro','cep','cidade','estado','observacao'
+        'cnpj','nome','fantasia','telefone','logradouro','cnae','numero','bairro','cep','cidade','estado','observacao'
     ];
 
     /**
